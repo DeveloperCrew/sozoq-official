@@ -1,0 +1,394 @@
+/* ==========================================================================
+   WORKLEY case study  (/work/workley)
+   Figma file gyHsVxMJIrtU3hoqXsb3b7 – desktop "workley" 3881:3489 (1440px),
+   mobile "workley" 3881:3739 (390px).
+   Everything is namespaced `wk-` so nothing on the existing pages changes.
+   At 1440px / 390px every size below equals the Figma value; between those
+   widths the layout flexes.
+   ========================================================================== */
+.wk {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  background: #fff;
+}
+.wk__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+/* the desktop / mobile copy differences in the two Figma frames */
+.wk-only-mobile {
+  display: none;
+}
+/* ---------- breadcrumb ---------- */
+.wk-back {
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  align-items: flex-start;
+  height: 18px;
+  font-family: var(--font-geist);
+  font-size: 12px;
+  line-height: 18px;
+  color: #444;
+}
+.wk-back img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+/* ---------- intro ---------- */
+.wk-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-auto-rows: minmax(240px, auto);
+  column-gap: 80px;
+  padding: 44px 0 20px;
+}
+.wk-intro__main {
+  max-width: 670px;
+}
+.wk-eyebrow {
+  margin: 0;
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #444;
+}
+.wk-h1 {
+  margin: 0;
+  padding-top: 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #111;
+  text-wrap: balance;
+}
+.wk-lead {
+  margin: 0;
+  padding-top: 22px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #111;
+  text-wrap: pretty;
+}
+.wk-facts {
+  align-self: start;
+  margin: 5px 0 0;
+  height: 205px;
+  display: grid;
+  align-content: start;
+  row-gap: 20px;
+  padding: 0 0 0 28px;
+  border-left: 1px solid var(--line);
+  font-family: var(--font-body);
+}
+.wk-facts__item {
+  min-height: 44px;
+}
+.wk-facts dt {
+  font-size: 12px;
+  line-height: 18px;
+  color: #444;
+}
+.wk-facts dd {
+  margin: 0;
+  padding-top: 4px;
+  min-height: 26px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #666;
+}
+/* ---------- hero figure (1120 × 662 tile + 30px caption gap) ---------- */
+.wk-fig {
+  margin: 0;
+  width: 100%;
+}
+.wk-fig::after {
+  content: "";
+  display: block;
+  height: 30px;
+}
+.wk-fig__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1120 / 662;
+  overflow: hidden;
+  background: #eee;
+  border-radius: 18px;
+}
+.wk-fig__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+/* ---------- "Coming soon" band ---------- */
+.wk-soon {
+  position: relative;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 64px;
+}
+.wk-soon__ghost {
+  position: absolute;
+  margin: 0;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: min(160px, 14.2857cqw);
+  line-height: 1.2;
+  letter-spacing: -0.01113em;
+  white-space: nowrap;
+  text-align: center;
+  color: #efefef;
+  pointer-events: none;
+  user-select: none;
+}
+.wk-soon__ghost--a {
+  left: calc(50% + 0.5px);
+  top: 3.75cqw;
+}
+.wk-soon__ghost--b {
+  left: calc(50% - 0.5px);
+  top: 17.7679cqw;
+}
+.wk-soon__ghost--c {
+  left: calc(50% + 0.5px);
+  top: 10.8036cqw;
+  color: #e7e7e7;
+}
+.wk-card {
+  position: relative;
+  width: 540px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 32px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+}
+.wk-card__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #1b1b1b;
+  pointer-events: none;
+}
+.wk-card__tex {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44.44%;
+  height: 56.47%;
+  max-width: none;
+}
+.wk-card__shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 27, 27, 0.8);
+}
+.wk-card__icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #202020;
+  border: 1px solid #363636;
+  border-radius: 24px;
+}
+.wk-card__icon-d {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  overflow: clip;
+}
+.wk-card__icon-d img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+}
+.wk-card__icon-m {
+  display: none;
+  width: 22px;
+  height: 22px;
+}
+.wk-card__kicker,
+.wk-card__title,
+.wk-card__text,
+.wk-card__link {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+.wk-card__kicker {
+  padding-top: 24px;
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #a5a5a5;
+}
+.wk-card__title {
+  padding-top: 12px;
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.48px;
+  color: #eee;
+}
+.wk-card__text {
+  padding-top: 16px;
+  font-family: var(--font-geist);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #bdbdbd;
+  text-wrap: pretty;
+}
+.wk-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  font-family: var(--font-geist);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #bdbdbd;
+}
+/* ---------- tablet ---------- */
+@media (max-width: 1023px) {
+  .wk-intro {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 28px;
+  }
+  .wk-facts {
+    height: auto;
+    margin: 0;
+    padding: 20px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    column-gap: 24px;
+  }
+}
+/* ---------- mobile (390px frame) ---------- */
+@media (max-width: 767px) {
+  .wk {
+    padding-top: 0;
+    padding-bottom: 56px;
+  }
+  .wk__inner {
+    padding: 0 16px;
+  }
+  .wk-only-desktop {
+    display: none;
+  }
+  .wk-only-mobile {
+    display: inline;
+  }
+  .wk-back {
+    display: none;
+  }
+  .wk-intro {
+    display: block;
+    padding: 32px 0;
+  }
+  .wk-intro__main {
+    max-width: 670px;
+  }
+  .wk-h1 {
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: -0.64px;
+  }
+  .wk-facts {
+    height: auto;
+    margin: 28px 0 0;
+    padding: 22px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    grid-template-columns: minmax(0, 350px);
+    justify-content: start;
+    row-gap: 16px;
+  }
+  .wk-facts__item {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 65px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+  .wk-facts dd {
+    padding-top: 0;
+    min-height: 0;
+  }
+  .wk-fig::after {
+    display: none;
+  }
+  .wk-fig__frame {
+    aspect-ratio: 358 / 212;
+  }
+  .wk-soon {
+    padding: 32px 0 40px;
+  }
+  .wk-soon__ghost {
+    display: none;
+  }
+  .wk-card {
+    width: 100%;
+  }
+  .wk-card__tex {
+    width: 68.57%;
+    height: 53.22%;
+  }
+  .wk-card__icon {
+    display: grid;
+  }
+  .wk-card__icon-d {
+    display: none;
+  }
+  .wk-card__icon-m {
+    display: block;
+  }
+  .wk-card__kicker,
+  .wk-card__title,
+  .wk-card__text {
+    max-width: 284px;
+  }
+}
+/* Figma's text columns are 350px inside the 358px content box on phones */
+@media (max-width: 430px) {
+  .wk-h1,
+  .wk-lead {
+    max-width: 350px;
+  }
+}

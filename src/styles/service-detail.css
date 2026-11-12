@@ -1,0 +1,610 @@
+/* ==========================================================================
+   SERVICE DETAIL pages  (/services/website-development, branding, ui-ux-design, seo-marketing,
+   app-development, cms-development)
+   Figma file gyHsVxMJIrtU3hoqXsb3b7 – website: desktop 4218:2761 / mobile 4218:2996,
+   branding: desktop 4220:3261 / mobile 4233:4308,
+   app: desktop 4217:1638 / mobile 4217:2340, cms: desktop 4232:4013 / mobile 4238:5194 (1440px / 390px).
+   Everything is namespaced `sd-` so no other page changes.
+   ========================================================================== */
+.sd {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  background: #fff;
+}
+.sd__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sd-d {
+  display: flex;
+}
+.sd-m {
+  display: none;
+}
+.sd h1,
+.sd h2,
+.sd p,
+.sd figure,
+.sd ul {
+  margin: 0;
+  padding: 0;
+}
+.sd-red {
+  color: var(--red);
+}
+.sd-sq {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+}
+.sd-dash {
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 11.52px;
+  line-height: 18px;
+  letter-spacing: 2.5344px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(68, 68, 68, 0.5);
+}
+
+/* ---------- eyebrow ---------- */
+.sd-eyebrow {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+.sd-eyebrow__in {
+  position: absolute;
+  left: 0;
+  top: 6.36px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+}
+.sd-eyebrow__code,
+.sd-eyebrow__name {
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #444;
+}
+.sd-eyebrow__name {
+  font-family: var(--ff-geist-mono-md), var(--font-geist-mono);
+  font-weight: 500;
+}
+
+/* ---------- hero ---------- */
+.sd-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: calc(
+    100% + 8px
+  ); /* Figma hero container is 1128px in a 1120px column */
+  padding-bottom: 40px;
+}
+.sd-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+.sd-hero__head {
+  width: 602.617px;
+}
+.sd-h1 {
+  width: var(--h1-w, auto); /* set per page on desktop only */
+  padding-top: 24px !important;
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: normal;
+  letter-spacing: -0.608px;
+  color: #111;
+}
+.sd-hero__lead {
+  width: var(--lead-w, 320px); /* set per page on desktop only */
+  max-width: var(--lead-w, 320px);
+  min-height: 69px; /* Figma text box is 69px (3 lines × 22.75) */
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.75px;
+  color: #444;
+}
+.sd-fig {
+  flex-shrink: 0;
+  position: relative;
+  width: 400px;
+  height: 261px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #eee;
+}
+.sd-fig img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* small image centred in the grey hero tile (branding) */
+.sd-fig--center img {
+  inset: auto;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: fill;
+}
+
+/* ---------- sections ---------- */
+.sd-sec {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 32px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.sd-sec--last {
+  padding-bottom: 48px;
+}
+.sd-sec__label {
+  flex: 1 0 0;
+  min-width: 1px;
+  max-width: 240px;
+  padding-top: 6px !important;
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #444;
+}
+.sd-sec__main {
+  flex: 1 0 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sd-h2 {
+  width: 100%;
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.48px;
+  text-wrap: balance;
+  white-space: nowrap;
+  color: #111;
+}
+.sd-p {
+  width: 100%;
+  padding-top: 20px !important;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  text-wrap: pretty;
+  color: #666;
+}
+
+/* ---------- numbered list ---------- */
+.sd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: var(--list-w, 444px); /* set per page on desktop only */
+  padding-top: 16px;
+}
+.sd-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 0;
+}
+.sd-row--line {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.sd-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.sd-item--wide {
+  width: 190px;
+}
+.sd-item__t {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  color: #444;
+}
+
+/* ---------- process / steps ---------- */
+.sd-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 839px;
+  padding-top: 32px;
+  border-radius: 12px;
+}
+.sd-flow__in {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 62px;
+  padding: 12px 0;
+}
+/* SEO & Marketing: the row is not pinned to 62px, so the rule sits at the icon centre */
+.sd-flow--auto .sd-flow__in {
+  height: auto;
+}
+.sd-flow--auto .sd-flow__line {
+  top: 34px;
+}
+.sd-flow__line {
+  position: absolute;
+  left: 64px;
+  top: 6px;
+  width: 702px;
+  height: 1px;
+  background: #111;
+}
+.sd-flow__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+}
+.sd-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+.sd-step--1 {
+  gap: 5px;
+}
+.sd-step--2 {
+  width: 76px;
+}
+.sd-step__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: #111;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+.sd-step__dot img {
+  width: 20px;
+  height: 20px;
+}
+.sd-step__txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 13.5px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.sd-step__title {
+  line-height: 14px; /* Figma title text box is 14px */
+  font-family: var(--font-body);
+  font-weight: 500;
+  white-space: nowrap;
+  color: #111;
+}
+.sd-step__desc {
+  flex-shrink: 0;
+  white-space: pre-line; /* honours a hand-placed line break in the copy */
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: rgba(17, 17, 17, 0.54);
+}
+.sd-step--1 .sd-step__desc {
+  width: 147px;
+}
+.sd-step--2 .sd-step__desc {
+  width: 158px;
+}
+.sd-step--3 .sd-step__desc,
+.sd-step--4 .sd-step__desc {
+  width: 162px;
+}
+
+/* ---------- bullets ---------- */
+.sd-bullets {
+  width: 100%;
+  padding-top: 12px;
+}
+.sd-bul {
+  width: 100%;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  color: #666;
+}
+.sd-bul li {
+  list-style: disc;
+  margin-left: 24px;
+  line-height: 26px;
+  text-wrap: pretty;
+}
+
+/* ---------- desktop header + footer row (Figma: 60px header, footer row at y=200) ---------- */
+@media (min-width: 768px) {
+  .page.page--sd.page--case .row--header,
+  .page.page--sd.page--case .header__margin,
+  .page.page--sd.page--case .header__middle,
+  .page.page--sd.page--case .ruler--header {
+    height: 60px;
+  }
+  .page--sd .legal {
+    top: 200px;
+    padding: 12px 24px;
+  }
+  .page--sd .legal__copy {
+    color: #a5a5a5;
+  }
+  .page--sd .legal__link {
+    color: #bdbdbd;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (<= 767px) – Figma 4218:2996, 390px frame
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* Figma mobile header is 91px: the "Back to Service" link keeps its full 44px box */
+  .page--sd .header__link {
+    margin: 0;
+  }
+  .sd {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sd-d {
+    display: none;
+  }
+  .sd-m {
+    display: flex;
+    width: 390px;
+    max-width: 1160px;
+    padding: 0 16px;
+  }
+  .sd-hero {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 12px 0 32px;
+  }
+  .sd-hero__copy {
+    width: 100%;
+    gap: 20px;
+  }
+  .sd-hero__head {
+    width: 100%;
+  }
+  .sd-h1 {
+    width: 306px;
+    padding-top: 18px !important;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: -0.2px;
+  }
+  .sd-fig {
+    width: 358px;
+    height: 212px;
+  }
+  .sd-sec {
+    flex-direction: column;
+    padding: 16px 0 24px;
+  }
+  .sd-sec--last {
+    padding-bottom: 90px;
+  }
+  .sd-sec__label {
+    flex: none;
+    width: 100%;
+    height: 44px;
+    max-width: none;
+  }
+  .sd-sec__main {
+    flex: none;
+    width: 100%;
+    max-width: 700.128px;
+  }
+  .sd-h2 {
+    width: 350px;
+    white-space: normal;
+  }
+  .sd-list {
+    width: 100%;
+  }
+  .sd-row {
+    justify-content: flex-start;
+  }
+  .sd-p--flow {
+    max-width: 700.128px;
+    padding-top: var(--flow-pt, 20px) !important;
+  }
+  .sd-flow--m {
+    width: 358px;
+    padding-top: 0;
+    align-items: flex-start;
+  }
+  .sd-flow--m .sd-flow__in {
+    gap: 10px;
+    height: auto;
+    padding: 8px 0;
+    align-items: flex-start;
+  }
+  .sd-flow--m .sd-flow__line {
+    left: var(--line-left, 50px);
+    top: 24px;
+    width: var(--line-w, 258px);
+  }
+  .sd-flow--m .sd-step,
+  .sd-flow--m .sd-step--1 {
+    gap: 3px;
+  }
+  .sd-flow--m .sd-step--2 {
+    width: auto;
+  }
+  .sd-flow--m .sd-step__dot {
+    width: 32px;
+    height: 32px;
+  }
+  .sd-flow--m .sd-step__dot img {
+    width: 14px;
+    height: 14px;
+  }
+  .sd-flow--m .sd-step__txt {
+    gap: 0;
+  }
+  .sd-flow--m .sd-step__title {
+    font-size: 12px;
+  }
+  .sd-flow--m .sd-step__desc {
+    font-size: 10px;
+    text-wrap: balance;
+  }
+  .sd-flow--m .sd-step--1 .sd-step__desc,
+  .sd-flow--m .sd-step--2 .sd-step__desc {
+    width: 114px;
+  }
+  .sd-flow--m .sd-step--3 .sd-step__desc {
+    width: 109px;
+  }
+  .sd-bullets {
+    padding-top: 8px;
+  }
+  .sd-bul:nth-child(n + 2) {
+    width: 350px;
+  }
+}
+
+/* ==========================================================================
+   App development (S-01) – icon-only process row: six steps, a label under each
+   dot and no description. Desktop Figma 4217:2280 · mobile 4217:2701.
+   Scoped to .sd-flow--icons so the other service pages are untouched.
+   ========================================================================== */
+.sd-p--tight {
+  padding-top: 8px !important; /* mobile: paragraph sits 8px under the process heading */
+}
+.sd-d .sd-flow--icons .sd-flow__line {
+  left: 44px;
+  top: 22px;
+  width: 744px;
+}
+.sd-d .sd-flow--icons .sd-step--1,
+.sd-d .sd-flow--icons .sd-step--2 {
+  width: 67px;
+  gap: 3px;
+}
+.sd-d .sd-flow--icons .sd-step--3 {
+  width: 67px;
+  gap: 5px;
+}
+.sd-d .sd-flow--icons .sd-step--4,
+.sd-d .sd-flow--icons .sd-step--5,
+.sd-d .sd-flow--icons .sd-step--6 {
+  width: 76px;
+  gap: 7px;
+}
+.sd-d .sd-flow--icons .sd-step__title {
+  font-weight: 400;
+  line-height: 13.5px;
+  color: rgba(17, 17, 17, 0.54);
+}
+@media (max-width: 767px) {
+  .sd-m .sd-flow--icons .sd-flow__in {
+    height: 62px;
+    justify-content: center;
+  }
+  .sd-m .sd-flow--icons .sd-flow__line {
+    top: 23px;
+  }
+  .sd-m .sd-flow--icons .sd-step {
+    width: auto;
+    gap: 3px;
+  }
+  .sd-m .sd-flow--icons .sd-step__title {
+    font-weight: 400;
+    line-height: 13.5px;
+    color: #111;
+  }
+}
+/* remove the "Back to Service" link from the top bar on service pages */
+.page--sd .header__links {
+  display: none !important;
+}
+/* ==========================================================================
+   Scroll-linked process progress: grey at first, black as you scroll
+   (JS sets --p on .sd-flow and adds .is-lit to each .sd-step__dot)
+   ========================================================================== */
+.sd-flow {
+  --p: 0;
+}
+.sd-flow__line {
+  background: #d4d4d8; /* empty (grey) line */
+}
+.sd-flow__line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #111; /* the filled part */
+  transform: scaleX(var(--p));
+  transform-origin: left center;
+  will-change: transform;
+}
+.sd-step__dot {
+  background: #cfcfd4; /* grey circle */
+  transition: background-color 0.45s ease;
+}
+.sd-step__dot.is-lit {
+  background: #111; /* black once the line reaches it */
+}
+@media (prefers-reduced-motion: reduce) {
+  .sd-step__dot {
+    transition: none;
+  }
+}

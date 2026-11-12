@@ -1,0 +1,65 @@
+/* CatRunner – pixel cat walking on the hero platform (desktop + mobile) */
+.cat {
+  --cat-s: 0.6; /* display scale of the 160px sprite cell */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0; /* = the platform line; the sprite's shadow is offset onto it */
+  height: calc(164px * var(--cat-s));
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.cat.is-ready {
+  opacity: 1;
+}
+.cat__sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(160px * var(--cat-s));
+  height: calc(164px * var(--cat-s));
+  background: url("/assets/images/cat-sprite.png") 0 0 no-repeat;
+  background-size: calc(860px * var(--cat-s)) calc(995px * var(--cat-s));
+  image-rendering: pixelated;
+  will-change: transform, background-position;
+  backface-visibility: hidden;
+}
+
+/* desktop: platform = top border of the status row, below the stage */
+@media (min-width: 768px) {
+  .dh-mid--stage .cat {
+    --cat-s: 0.62;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .dh-mid--stage .cat {
+    --cat-s: 0.52;
+  }
+}
+/* mobile: platform = top border of .mh-status (44px tall) */
+@media (max-width: 767px) {
+  .mh-hero > .cat {
+    --cat-s: 0.6;
+    bottom: 44px;
+  }
+}
+
+/* calibration overlay (?catdebug=1) */
+.cat-debug {
+  position: fixed;
+  right: 8px;
+  top: 8px;
+  z-index: 9999;
+  background: #f6f6f6;
+  outline: 1px solid #f0f;
+  pointer-events: none;
+}
+.cat-debug img {
+  display: block;
+}
+.cat-debug i {
+  position: absolute;
+  outline: 1px solid rgba(255, 0, 80, 0.7);
+}
