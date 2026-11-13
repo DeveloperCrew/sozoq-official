@@ -3,8 +3,8 @@ export default function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "SOZOQ",
-    url: "https://sozoq.in",
-    logo: "https://sozoq.in/icon.svg", // better: a PNG logo of at least 112x112
+    url: "https://www.sozoq.in",
+    logo: "https://www.sozoq.in/logo.png",
     description:
       "We are a creative tech agency. Design, develop and grow with us.",
     email: "hello@sozoq.in",

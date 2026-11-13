@@ -12,7 +12,7 @@ import { CASE_STUDIES } from "@/data/content";
  * - Google ignores changeFrequency and priority; they are kept because
  *   some other search engines (e.g. Bing) may still read them.
  */
-const BASE = "https://www.sozoq.in/"; // change to "https://www.sozoq.in" if that is your live address
+const BASE = "https://www.sozoq.in";
 
 const SITE_UPDATED = new Date("2026-11-12");
 

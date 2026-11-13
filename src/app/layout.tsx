@@ -51,14 +51,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.sozoq.in/"),
-  title: "SOZOQ – Creative Tech Agency",
-  description:
-    "We are a creative tech agency. Design, develop and grow with us.",
+  metadataBase: new URL("https://www.sozoq.in"),
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "https://sozoq.in",
+    url: "https://www.sozoq.in",
     siteName: "SOZOQ",
     title: "SOZOQ – Creative Tech Agency",
     description:
