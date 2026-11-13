@@ -818,23 +818,26 @@ export const SERVICES_PAGE: ServicesPageData = {
    Figma: form 4007:1663 · after submit 4021:3965 · mobile 4011:3486 */
 export const CONTACT_PAGE: ContactPageData = {
   title: "Something exciting on your mind?",
-  lead: "Tell us where you want to go. We\u2019ll turn Zero Asset into Novel Artifact - and reply within 1\u20132 business days.",
+  lead: "Tell us where you want to go. We\u2019ll reply within 1\u20132 business days.",
   emails: ["hello@sozoq.in", "info@sozoq.in"],
   phone: "+91 9480182217",
   phoneHref: "tel:+919480182217",
   whatsappText: "Chat with us instantly",
   office: "Kuttipuzha, Kochi, Kerala, India",
+  leadMobile:
+    "Tell us where you want to go. We\u2019ll reply within 1\u20132 business days.",
   services: [
-    "App development",
-    "Website development",
+    "App Development",
+    "Website Development",
     "Branding",
     "UI/UX Design",
     "SEO & Marketing",
     "CMS Development",
   ],
-  thanks: "Thank You for your submission!",
-  thanksButton: "Meawwwwww",
+  thanks: "Thank You!",
+  thanksButton: "Meowwwwww!",
   thanksImage: "/assets/images/contact-thanks.webp",
+  thanksImageBlink: "/assets/images/contact-thanks-blink.webp",
 };
 
 /* ---------- /work page (Figma 3979:6342) ---------- */

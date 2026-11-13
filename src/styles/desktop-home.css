@@ -592,7 +592,31 @@
     font-family: var(--dh-geist);
     color: #eee;
   }
+  /* hover: same keycap sink as the contact-page buttons */
+  .dh-cta {
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease;
+  }
+  @media (hover: hover) {
+    .dh-cta:hover {
+      transform: translateY(1px);
+    }
+    .dh-cta--light:hover {
+      box-shadow:
+        0 2px 0 0 #7d7d7d,
+        0 2px 0 1px rgba(0, 0, 0, 0.67),
+        0 5px 8px -6px rgba(0, 0, 0, 0.45);
+    }
+    .dh-cta--dark:hover {
+      box-shadow:
+        0 2px 0 0 #070707,
+        0 2px 0 1px #2c2c2c,
+        0 5px 8px -6px rgba(0, 0, 0, 0.45);
+    }
+  }
   /* press effect: button goes down, edge shadow collapses */
+
   .dh-cta:active {
     transform: translateY(3px);
   }
@@ -1407,8 +1431,21 @@
       transform 90ms ease,
       box-shadow 90ms ease;
   }
+  @media (hover: hover) {
+    .dh-fwa:hover {
+      transform: translateY(1px);
+      box-shadow:
+        0 4px 0 0 #070707,
+        0 4px 0 1px #2c2c2c,
+        0 10px 16px -8px #000;
+    }
+  }
   .dh-fwa:active {
-    transform: translateY(2px);
+    transform: translateY(5px);
+    box-shadow:
+      0 0 0 0 #070707,
+      0 0 0 1px #2c2c2c,
+      0 2px 4px -2px #000;
   }
   .dh-fwa::after {
     content: "";

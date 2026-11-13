@@ -57,7 +57,7 @@ export const D_SERVICES = {
       size: "lg",
       icon: SERVICE_ICONS.app,
       title: "App Development",
-      text: "Fast, modern sites that convert visitors into customers - engineered to scale.",
+      text: "iOS and Android app development, API integration, backend systems and app maintenance.",
     },
     {
       code: "S-02",
@@ -65,7 +65,7 @@ export const D_SERVICES = {
       size: "sm",
       icon: SERVICE_ICONS.website,
       title: "Website Development",
-      text: "Native iOS & Android, built to ship.",
+      text: "Business websites, e-commerce platforms, custom web applications and responsive web solutions.",
     },
     {
       code: "S-03",
@@ -73,7 +73,7 @@ export const D_SERVICES = {
       size: "sm",
       icon: SERVICE_ICONS.branding,
       title: "Branding",
-      text: "Identity systems with a backbone.",
+      text: "Logo design, brand identity, brand guidelines, visual systems and brand communication.",
     },
     {
       code: "S-04",
@@ -81,7 +81,7 @@ export const D_SERVICES = {
       size: "sm",
       icon: SERVICE_ICONS.uiux,
       title: "UI/UX Design",
-      text: "Interfaces people actually enjoy.",
+      text: "User research, wireframing, interface design, prototyping and usability testing.",
     },
     {
       code: "S-05",
@@ -89,7 +89,7 @@ export const D_SERVICES = {
       size: "lg",
       icon: SERVICE_ICONS.seo,
       title: "SEO & Marketing",
-      text: "AI-powered automations that save hours of manual work every week.",
+      text: "Search engine optimisation, social media management, content strategy and digital advertising.",
     },
     {
       code: "S-06",
@@ -97,7 +97,7 @@ export const D_SERVICES = {
       size: "lg",
       icon: SERVICE_ICONS.cms,
       title: "CMS Development",
-      text: "From idea to launchable product, fast.",
+      text: "Custom CMS solutions, WordPress development, content management and website integrations.",
     },
   ] satisfies DesktopService[],
 };

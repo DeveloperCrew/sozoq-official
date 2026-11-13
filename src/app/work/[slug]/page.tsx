@@ -19,7 +19,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const data = CASE_STUDIES[slug];
   if (!data) return {};
-  return { title: data.metaTitle, description: data.metaDescription };
+  return {
+    title: data.metaTitle,
+    description: data.metaDescription,
+    alternates: { canonical: `/work/${slug}` },
+  };
 }
 
 export default async function CasePage({ params }: { params: Params }) {

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions – Sozoq",
   description:
     "The terms that govern your use of the SOZOQ website and services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function Terms() {

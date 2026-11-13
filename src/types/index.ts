@@ -205,6 +205,8 @@ export interface ContactPageData {
   thanks: string;
   thanksButton: string;
   thanksImage: string;
+  thanksImageBlink: string;
+  leadMobile?: string;
 }
 
 export type LegalListItem = string | { b: string; x: string };
@@ -243,12 +245,15 @@ export interface WorkleyData {
 
 export interface ContactFormValues {
   name: string;
+  phone: string;
   email: string;
   service: string;
   message: string;
 }
 
-export type ContactFormErrors = Partial<Record<keyof ContactFormValues, string>>;
+export type ContactFormErrors = Partial<
+  Record<keyof ContactFormValues, string>
+>;
 
 /* ---------- home page: selected works (shared by desktop + mobile) ---------- */
 

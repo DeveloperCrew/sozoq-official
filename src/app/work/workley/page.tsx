@@ -10,6 +10,7 @@ import "./workley.css";
 export const metadata: Metadata = {
   title: WORKLEY.metaTitle,
   description: WORKLEY.metaDescription,
+  alternates: { canonical: "/work/workley" },
 };
 
 export default function WorkleyPage() {

@@ -72,14 +72,21 @@ export default function ContactPage() {
       <div className="ct__inner">
         <header className="ct__intro">
           <h1 className="ct__h1">{c.title}</h1>
-          <p className="ct__lead">{c.lead}</p>
+          <p className="ct__lead">
+            <span className="ct-only-desktop">{c.lead}</span>
+            <span className="ct-only-mobile">{c.leadMobile ?? c.lead}</span>
+          </p>
         </header>
 
         <div className="ct__grid">
           <div className="ct__info">
             <InfoCard icon={MailIcon} label="Email" className="ct-card--email">
               {c.emails.map((mail) => (
-                <a className="ct-card__value" href={`mailto:${mail}`} key={mail}>
+                <a
+                  className="ct-card__value"
+                  href={`mailto:${mail}`}
+                  key={mail}
+                >
                   {mail}
                 </a>
               ))}
@@ -113,6 +120,7 @@ export default function ContactPage() {
             thanks={c.thanks}
             thanksButton={c.thanksButton}
             thanksImage={c.thanksImage}
+            thanksImageBlink={c.thanksImageBlink}
             whatsappUrl={WHATSAPP_URL}
           />
         </div>

@@ -52,21 +52,21 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sozoq.in"),
-  alternates: { canonical: "/" },
+  title: "SOZOQ | Creative Tech Agency for Web, App & UI/UX Design",
+  description:
+    "SOZOQ is a creative tech agency. We design and build websites, mobile apps, brands and UI/UX for startups and growing businesses.",
+  // no alternates/canonical here, each page sets its own
   openGraph: {
     type: "website",
-    url: "https://www.sozoq.in",
     siteName: "SOZOQ",
-    title: "SOZOQ – Creative Tech Agency",
-    description:
-      "We are a creative tech agency. Design, develop and grow with us.",
+    title: "SOZOQ | Creative Tech Agency",
+    description: "Design, develop and grow with us.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SOZOQ" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SOZOQ – Creative Tech Agency",
-    description:
-      "We are a creative tech agency. Design, develop and grow with us.",
+    title: "SOZOQ | Creative Tech Agency",
+    description: "Design, develop and grow with us.",
     images: ["/og-image.png"],
   },
   appleWebApp: {
@@ -75,7 +75,6 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
   },
 };
-
 const fontVars = [familjen, inter, geist, geistMono, geistMonoMd]
   .map((f) => f.variable)
   .join(" ");

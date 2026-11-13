@@ -53,7 +53,7 @@ export const M_SERVICES = {
       icon: SERVICE_ICONS.app,
       iconW: 23,
       title: "App Development",
-      text: "Native iOS & Android, built to ship.",
+      text: "iOS and Android app development, API integration, backend systems and app maintenance.",
     },
     {
       code: "S-02",
@@ -61,7 +61,7 @@ export const M_SERVICES = {
       icon: SERVICE_ICONS.website,
       iconW: 32,
       title: "Website Development",
-      text: "Fast, modern sites that convert visitors into customers - engineered to scale.",
+      text: "Business websites, e-commerce platforms, custom web applications and responsive web solutions.",
       softBorder: true,
     },
     {
@@ -70,7 +70,7 @@ export const M_SERVICES = {
       icon: SERVICE_ICONS.branding,
       iconW: 32,
       title: "Branding",
-      text: "Identity systems with a backbone.",
+      text: "Logo design, brand identity, brand guidelines, visual systems and brand communication.",
     },
     {
       code: "S-04",
@@ -78,7 +78,7 @@ export const M_SERVICES = {
       icon: SERVICE_ICONS.uiux,
       iconW: 32,
       title: "UI/UX Design",
-      text: "Interfaces people actually enjoy.",
+      text: "User research, wireframing, interface design, prototyping and usability testing.",
       softBorder: true,
     },
     {
@@ -87,7 +87,7 @@ export const M_SERVICES = {
       icon: SERVICE_ICONS.seo,
       iconW: 32,
       title: "SEO & Marketing",
-      text: "Get found, get clicked, get customers.",
+      text: "Search engine optimisation, social media management, content strategy and digital advertising.",
     },
     {
       code: "S-06",
@@ -95,7 +95,7 @@ export const M_SERVICES = {
       icon: SERVICE_ICONS.cms,
       iconW: 32,
       title: "CMS Development",
-      text: "Content you can update yourself, without calling a developer.",
+      text: "Custom CMS solutions, WordPress development, content management and website integrations.",
       softBorder: true,
     },
   ] satisfies MobileService[],

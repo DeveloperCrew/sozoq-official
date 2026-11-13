@@ -8,6 +8,7 @@ import { INNER_NAV_LINKS, WORK_PAGE } from "@/data/content";
 export const metadata: Metadata = {
   title: WORK_PAGE.metaTitle,
   description: WORK_PAGE.metaDescription,
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {

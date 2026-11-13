@@ -158,21 +158,30 @@
     position: relative;
     flex: none;
     display: block;
-    width: 108px;
-    height: 30px;
+    width: 141px;
+    height: 37px;
     overflow: clip;
     background: #222;
-    border-radius: 4px 4px 6px 6px;
+    border-radius: 8px 8px 10px 10px;
     box-shadow:
-      0 2px 0 0 #070707,
-      0 2px 0 1px #2c2c2c,
-      0 6px 10px -8px #000;
+      0 5px 0 0 #070707,
+      0 5px 0 1px #2c2c2c,
+      0 12px 20px -8px #000;
     transition:
-      transform 90ms ease,
-      box-shadow 90ms ease;
+      transform 120ms ease,
+      box-shadow 120ms ease;
+  }
+  @media (hover: hover) {
+    .mh-wa:hover {
+      transform: translateY(1px);
+      box-shadow:
+        0 4px 0 0 #070707,
+        0 4px 0 1px #2c2c2c,
+        0 10px 16px -8px #000;
+    }
   }
   .mh-wa:active {
-    transform: translateY(2px);
+    transform: translateY(5px);
     box-shadow:
       0 0 0 0 #070707,
       0 0 0 1px #2c2c2c,
@@ -188,45 +197,45 @@
   }
   .mh-wa__well {
     position: absolute;
-    left: 22px;
-    top: 2px;
-    width: 84px;
-    height: 27px;
-    border-radius: 4px;
+    left: 28px;
+    top: 6px;
+    width: 108px;
+    height: 25px;
+    border-radius: 5px;
     background: #141414;
     box-shadow:
       inset 0 1px 2px 0 rgba(0, 0, 0, 0.8),
       inset 0 -1px 0 0 rgba(255, 255, 255, 0.06);
   }
+  /* four ribs at x = 6, 11, 16, 21 (Figma) */
   .mh-wa__ribs {
     position: absolute;
-    left: 5px;
-    top: 0;
+    left: 6px;
+    top: 1px;
     width: 1px;
-    height: 28px;
+    height: 44px;
     background: #0a0a0a;
     box-shadow:
       1px 0 0 0 #363636,
-      4px 0 0 0 #0a0a0a,
-      5px 0 0 0 #363636,
-      8px 0 0 0 #0a0a0a,
-      9px 0 0 0 #363636,
-      12px 0 0 0 #0a0a0a,
-      13px 0 0 0 #363636;
+      5px 0 0 0 #0a0a0a,
+      6px 0 0 0 #363636,
+      10px 0 0 0 #0a0a0a,
+      11px 0 0 0 #363636,
+      15px 0 0 0 #0a0a0a,
+      16px 0 0 0 #363636;
   }
   .mh-wa__icon {
     position: absolute;
-    left: 29px;
-    top: 9px;
-    width: 12px;
-    height: 12px;
+    left: 42px;
+    top: 12px;
+    width: 14px;
+    height: 14px;
   }
   .mh-wa__label {
     position: absolute;
-    left: 73.5px;
-    top: calc(50% - 7px);
-    transform: translateX(-50%);
-    font: 400 12px/normal var(--mh-body);
+    left: 60px;
+    top: 10px;
+    font: 400 14px/18px var(--mh-body);
     color: #eee;
     white-space: nowrap;
   }

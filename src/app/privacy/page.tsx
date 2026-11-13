@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy – Sozoq",
   description:
     "How SOZOQ collects, uses, stores, shares and protects your information.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function Privacy() {

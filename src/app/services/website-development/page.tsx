@@ -9,6 +9,7 @@ import "@/styles/service-detail.css";
 export const metadata: Metadata = {
   title: DATA.metaTitle,
   description: DATA.metaDescription,
+  alternates: { canonical: `/services/${DATA.slug}` },
 };
 
 /* /services/website-development – opened from its card on the home page */

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const PHONE_RE = /^\+?[\d\s\-()]{7,18}$/;
 const clean = (v: unknown, max: number) =>
   String(v ?? "")
     .trim()
@@ -15,9 +16,11 @@ const ESCAPES: Record<string, string> = {
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ESCAPES[c]);
 
 /* saves the enquiry to Google Sheets through a private Apps Script.
-   Both values are server-only env vars – never sent to the browser. */
+   Both values are server-only env vars – never sent to the browser.
+   NOTE: the Apps Script now also receives `phone` – add a column for it. */
 async function saveToSheet(data: {
   name: string;
+  phone: string;
   email: string;
   service: string;
   message: string;
@@ -61,18 +64,30 @@ export async function POST(request: Request) {
   }
 
   const name = clean(body.name, 120);
-  const email = clean(body.email, 200);
+  const phone = clean(body.phone, 30);
+  const email = clean(body.email, 200); // optional
   const service = clean(body.service, 80);
   const message = clean(body.message, 4000);
 
-  if (!name || !EMAIL_RE.test(email) || !service) {
+  if (
+    !name ||
+    !PHONE_RE.test(phone) ||
+    (email && !EMAIL_RE.test(email)) ||
+    !service
+  ) {
     return NextResponse.json(
       { error: "Missing or invalid fields" },
       { status: 400 },
     );
   }
 
-  const savedToSheet = await saveToSheet({ name, email, service, message });
+  const savedToSheet = await saveToSheet({
+    name,
+    phone,
+    email,
+    service,
+    message,
+  });
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
@@ -82,7 +97,7 @@ export async function POST(request: Request) {
     if (process.env.NODE_ENV !== "production") {
       console.log(
         "[contact] (not saved – set SHEETS_WEBHOOK_URL / SHEETS_SECRET)",
-        { name, email, service, message },
+        { name, phone, email, service, message },
       );
       return NextResponse.json({ ok: true });
     }
@@ -98,9 +113,10 @@ export async function POST(request: Request) {
     body: JSON.stringify({
       from: process.env.CONTACT_FROM_EMAIL || "Sozoq <onboarding@resend.dev>",
       to: [to],
-      reply_to: email,
+      // email is optional now – only set reply_to when we have one
+      ...(email ? { reply_to: email } : {}),
       subject: `New enquiry – ${service} – ${name}`,
-      html: `<p><b>Name:</b> ${esc(name)}</p><p><b>Email:</b> ${esc(email)}</p><p><b>Service:</b> ${esc(service)}</p><p><b>Project:</b><br>${esc(message).replace(/\n/g, "<br>") || "—"}</p>`,
+      html: `<p><b>Name:</b> ${esc(name)}</p><p><b>Mobile:</b> ${esc(phone)}</p><p><b>Email:</b> ${esc(email) || "—"}</p><p><b>Service:</b> ${esc(service)}</p><p><b>Project:</b><br>${esc(message).replace(/\n/g, "<br>") || "—"}</p>`,
     }),
   });
 

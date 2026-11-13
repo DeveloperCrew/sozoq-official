@@ -62,8 +62,8 @@ export default function MobileHome() {
             className="mh-wa__icon"
             src={HOME_ICONS.whatsappHeader}
             alt=""
-            width={12}
-            height={12}
+            width={14}
+            height={14}
           />
           <span className="mh-wa__label">Whatsapp</span>
         </a>
