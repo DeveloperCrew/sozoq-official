@@ -8,6 +8,8 @@ import "@/styles/desktop-home.css";
 import "@/styles/cat-runner.css";
 import ScrollEffects from "@/components/shared/ScrollEffects";
 import RegisterSW from "@/components/shared/RegisterSW";
+import OrganizationSchema from "@/components/shared/OrganizationSchema";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const familjen = Familjen_Grotesk({
   subsets: ["latin"],
@@ -49,9 +51,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "SOZOQ",
+  metadataBase: new URL("https://www.sozoq.in/"),
+  title: "SOZOQ – Creative Tech Agency",
   description:
     "We are a creative tech agency. Design, develop and grow with us.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "https://sozoq.in",
+    siteName: "SOZOQ",
+    title: "SOZOQ – Creative Tech Agency",
+    description:
+      "We are a creative tech agency. Design, develop and grow with us.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SOZOQ" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SOZOQ – Creative Tech Agency",
+    description:
+      "We are a creative tech agency. Design, develop and grow with us.",
+    images: ["/og-image.png"],
+  },
   appleWebApp: {
     capable: true,
     title: "SOZOQ",
@@ -70,7 +90,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={fontVars}>
+      <GoogleTagManager gtmId="GTM-K3CB2JBW" />
       <body>
+        <OrganizationSchema />
         <ScrollEffects />
         <RegisterSW />
         {children}
